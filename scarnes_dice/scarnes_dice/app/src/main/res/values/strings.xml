@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">scarnes_dice</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_roll">ROLL</string>
+    <string name="button_hold">HOLD</string>
+    <string name="button_rest">RESET</string>
+</resources>
