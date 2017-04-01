@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">scarnes_dice</string>
-    <string name="roll_button">ROLL</string>
-    <string name="hold_button">HOLD</string>
-    <string name="reset_button">RESET</string>
-</resources>
