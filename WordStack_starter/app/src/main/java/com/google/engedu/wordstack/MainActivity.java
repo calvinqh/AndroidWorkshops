@@ -34,6 +34,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Stack;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private Random random = new Random();
     private StackedLayout stackedLayout;
     private String word1, word2;
+    private Stack<LetterTile> placedTiles = new Stack<LetterTile>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +59,8 @@ public class MainActivity extends AppCompatActivity {
             String line = null;
             while((line = in.readLine()) != null) {
                 String word = line.trim();
-                /**
-                 **
-                 **  YOUR CODE GOES HERE
-                 **
-                 **/
+                if(word.length() == WORD_LENGTH)
+                    words.add(word);
             }
         } catch (IOException e) {
             Toast toast = Toast.makeText(this, "Could not load dictionary", Toast.LENGTH_LONG);
@@ -71,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
         verticalLayout.addView(stackedLayout, 3);
 
         View word1LinearLayout = findViewById(R.id.word1);
-        word1LinearLayout.setOnTouchListener(new TouchListener());
-        //word1LinearLayout.setOnDragListener(new DragListener());
+        //word1LinearLayout.setOnTouchListener(new TouchListener());
+        word1LinearLayout.setOnDragListener(new DragListener());
         View word2LinearLayout = findViewById(R.id.word2);
-        word2LinearLayout.setOnTouchListener(new TouchListener());
-        //word2LinearLayout.setOnDragListener(new DragListener());
+        //word2LinearLayout.setOnTouchListener(new TouchListener());
+        word2LinearLayout.setOnDragListener(new DragListener());
     }
 
     private class TouchListener implements View.OnTouchListener {
@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         public boolean onTouch(View v, MotionEvent event) {
             if (event.getAction() == MotionEvent.ACTION_DOWN && !stackedLayout.empty()) {
                 LetterTile tile = (LetterTile) stackedLayout.peek();
+                placedTiles.push(tile);
                 tile.moveToViewGroup((ViewGroup) v);
                 if (stackedLayout.empty()) {
                     TextView messageBox = (TextView) findViewById(R.id.message_box);
@@ -129,11 +130,7 @@ public class MainActivity extends AppCompatActivity {
                         TextView messageBox = (TextView) findViewById(R.id.message_box);
                         messageBox.setText(word1 + " " + word2);
                     }
-                    /**
-                     **
-                     **  YOUR CODE GOES HERE
-                     **
-                     **/
+                    placedTiles.push(tile);
                     return true;
             }
             return false;
@@ -143,20 +140,60 @@ public class MainActivity extends AppCompatActivity {
     protected boolean onStartGame(View view) {
         TextView messageBox = (TextView) findViewById(R.id.message_box);
         messageBox.setText("Game started");
-        /**
-         **
-         **  YOUR CODE GOES HERE
-         **
-         **/
+
+        //Clearing word1 and word2 linear layout
+        LinearLayout word1Layout = (LinearLayout) findViewById(R.id.word1);
+        LinearLayout word2Layout = (LinearLayout) findViewById(R.id.word2);
+        word1Layout.removeAllViews();
+        word2Layout.removeAllViews();
+        //end
+
+        word1 = words.get(random.nextInt(words.size()));
+        word2 = words.get(random.nextInt(words.size())); //make sure the string is not the same as word1
+
+        //Creating random new word
+        String randomNewWord = "";
+        int counter1 = WORD_LENGTH;
+        int counter2 = WORD_LENGTH;
+        while(counter1 > 0 && counter2 > 0) {
+            if(random.nextInt(2)+1==1)
+                randomNewWord += word1.charAt(WORD_LENGTH-counter1--);
+            else
+                randomNewWord += word2.charAt(WORD_LENGTH-counter2--);
+        }
+        if(counter1 > 0)
+            randomNewWord = randomNewWord + word1.substring(WORD_LENGTH-counter1);
+        else if (counter2 > 0)
+            randomNewWord = randomNewWord + word2.substring(WORD_LENGTH-counter2);
+        messageBox.setText(randomNewWord);
+        //finish creating random new word
+
+        for (int i = randomNewWord.length()-1; i >= 0; i--) {
+            LetterTile tile = new LetterTile(view.getContext(),randomNewWord.charAt(i));
+            stackedLayout.push(tile);
+        }
+        //finish creating random new word
+
         return true;
     }
 
     protected boolean onUndo(View view) {
-        /**
-         **
-         **  YOUR CODE GOES HERE
-         **
-         **/
+        if(!placedTiles.empty()) {
+            LetterTile prev = placedTiles.pop();
+            prev.moveToViewGroup(stackedLayout);
+        }
         return true;
     }
+
+    protected boolean checkSolution(View view) {
+        if(stackedLayout.empty()) {
+            //check if words are valid
+
+        }
+        else {
+            //update textbox
+        }
+        return true;
+    }
+
 }
