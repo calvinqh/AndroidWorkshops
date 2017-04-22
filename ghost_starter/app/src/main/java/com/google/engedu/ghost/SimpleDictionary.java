@@ -20,9 +20,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Random;
+
 
 public class SimpleDictionary implements GhostDictionary {
     private ArrayList<String> words;
+    private Random random = new Random();
+
 
     public SimpleDictionary(InputStream wordListStream) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(wordListStream));
@@ -42,6 +46,13 @@ public class SimpleDictionary implements GhostDictionary {
 
     @Override
     public String getAnyWordStartingWith(String prefix) {
+        if(prefix.length() == 0) {
+            int r = this.random.nextInt(this.words.size());
+            return this.words.get(r);
+        }
+        int newIndex = BinarySearch(prefix);
+        if (newIndex >= 0)
+            return this.words.get(newIndex);
         return null;
     }
 
@@ -49,5 +60,27 @@ public class SimpleDictionary implements GhostDictionary {
     public String getGoodWordStartingWith(String prefix) {
         String selected = null;
         return selected;
+    }
+
+    public int BinarySearch(String prefix) {
+        int first = 0;
+        int last = words.size()-1;
+        while(first<=last) {
+            int mid = (first+last)/2;
+            String word = this.words.get(mid);
+            String word_prefix = "";
+            if(word.length() > prefix.length()) {
+                word_prefix = word.substring(0, prefix.length());
+                if (word_prefix.compareTo(prefix) == 0)
+                    return mid;
+            }
+            else if (first == last)
+                break;
+            if(word.compareTo(prefix) < 0)
+                first = mid + 1;
+            else
+                last = mid - 1;
+        }
+        return -1;
     }
 }

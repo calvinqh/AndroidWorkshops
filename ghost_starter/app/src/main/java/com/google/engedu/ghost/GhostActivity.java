@@ -103,19 +103,69 @@ public class GhostActivity extends AppCompatActivity {
     private void computerTurn() {
         TextView label = (TextView) findViewById(R.id.gameStatus);
         // Do computer turn stuff then make it the user's turn again
+        TextView frag = (TextView) findViewById(R.id.ghostText);
+        if(frag.getText().length() >= 4)
+            label.setText("Computer Victory");
+        String str_frag = (String) frag.getText();
+        String new_word = this.dictionary.getAnyWordStartingWith(str_frag);
+        if(new_word == null) {
+            //word does not exist, challenge the user
+            userTurn = true;
+            label.setText(USER_TURN);
+            challengeUser();
+        } else {
+            //The word exsists
+            new_word = new_word.substring(str_frag.length());
+            String updateFrag = (String) frag.getText();
+            updateFrag += new_word.charAt(0);
+            frag.setText(updateFrag);
+        }
         userTurn = true;
         label.setText(USER_TURN);
+    }
+
+    private void challengeUser() {
+        System.out.println("Challenged!");
     }
 
     /**
      * Handler for user key presses.
      * @param keyCode
      * @param event
-     * @return whether the key stroke was handled.
+     * @return whether the key stroke was handled
      */
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
+        char pressedKey = (char)event.getUnicodeChar();
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        if(alphabet.indexOf(pressedKey)==-1)
+            return super.onKeyUp(keyCode, event);
+        TextView text = (TextView) findViewById(R.id.ghostText);
+        TextView status = (TextView) findViewById(R.id.gameStatus);
+        String newFrag = (String)text.getText();
+        newFrag += pressedKey;
+        text.setText(newFrag);
+        if(this.dictionary.isWord(newFrag)) {
+            status.setText("Valid Word");
+        } else {
+            status.setText("Invalid Word");
+        }
+        this.userTurn=false;
+        this.computerTurn();
+        return true;
+    }
 
-        return super.onKeyUp(keyCode, event);
+    public void challenge(View view) {
+        TextView frag = (TextView) findViewById(R.id.ghostText);
+        TextView status = (TextView) findViewById(R.id.gameStatus);
+        if(frag.getText().length() > 4 && dictionary.isWord((String)frag.getText())){
+            status.setText("User Wins!");
+        }
+        String word = dictionary.getAnyWordStartingWith((String)frag.getText());
+        if(word != null)
+            status.setText("Computer Wins");
+        else
+            status.setText("User Wins");
+
     }
 }
