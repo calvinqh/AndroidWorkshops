@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\.android\build-cache\97c1aa003757fd461c3a410941d9e691ae844db2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a7be9a61a588374e81b651cd831edb99b6d643a0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\.android\build-cache\4a84eb067e0295f4b5ea3eb3d01d30d24fef7490\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fe2a6372705a89c993dd441b93cc47a9a33c1b34\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\.android\build-cache\0748929dd279176ea87e58a2696bca577ae39b25\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8721ba21280be12a5879f0a31cd3531d53aa7558\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_3afd1dbb531b4fbed32d052f53643d9c1269e1ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\.android\build-cache\03ccf0635fccda45807f379e459233c2303d6496\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_74aa1dae8e07e43312fdda5713e0fe32a35e2011\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\.android\build-cache\d4d23e554d880abeb46670ace6ce962dabd05e8d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8ba6ea94c3368f39fa7d0b19ce8608ea4a344f60\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\.android\build-cache\af14bc74602032a5e97bfada9145efd1cac97bc3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_233b8a171c7d4b74eac0e58186f715b9d6a7ae9e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="013c41716128a9cc1e9fa123851e6ffbb6958898">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7ace15299af2cd96de78b5d1c0a1dc486d6cc5a4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\.android\build-cache\35564f8b3a1903e3b7838533d91719c9db5fbce8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f9234c8f06b01535ce9b685f93ab77083cddebb1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\.android\build-cache\52ed94bb42e6c7e99c6a59b65b095cd63a2773c6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dc354160753e30d7d9e3cacc4f95079cd563a62f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Calvin Quach\.android\build-cache\709152bae3a1048bef0f7da07ef6597edd7cfdad\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="C:\Users\Calvin Quach\Documents\Workshop\scarnes_dice\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_061786ebe88b1c51b2463b598e27306c5d121bab\classes.dex" />
+    </item>
+
+</items>

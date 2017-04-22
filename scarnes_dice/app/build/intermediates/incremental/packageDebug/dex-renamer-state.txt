@@ -1,0 +1,7 @@
+#Sat Mar 25 12:24:11 EDT 2017
+base.0=C\:\\Users\\Calvin Quach\\Documents\\Workshop\\scarnes_dice\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_7ace15299af2cd96de78b5d1c0a1dc486d6cc5a4
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\Calvin Quach\\Documents\\Workshop\\scarnes_dice\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_3afd1dbb531b4fbed32d052f53643d9c1269e1ea\\classes.dex
+base.1=C\:\\Users\\Calvin Quach\\Documents\\Workshop\\scarnes_dice\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_3afd1dbb531b4fbed32d052f53643d9c1269e1ea
+file.0=C\:\\Users\\Calvin Quach\\Documents\\Workshop\\scarnes_dice\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_7ace15299af2cd96de78b5d1c0a1dc486d6cc5a4\\classes.dex

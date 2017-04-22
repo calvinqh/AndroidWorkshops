@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Calvin Quach\\Documents\\Workshop\\scarnes_dice\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\Calvin Quach\\.android\\build-cache\\52ed94bb42e6c7e99c6a59b65b095cd63a2773c6\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\Calvin Quach\\Documents\\Workshop\\scarnes_dice\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Calvin Quach\\.android\\build-cache\\52ed94bb42e6c7e99c6a59b65b095cd63a2773c6\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\Calvin Quach\\Documents\\Workshop\\scarnes_dice\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Calvin Quach\\.android\\build-cache\\52ed94bb42e6c7e99c6a59b65b095cd63a2773c6\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\Calvin Quach\\Documents\\Workshop\\scarnes_dice\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\Calvin Quach\\.android\\build-cache\\52ed94bb42e6c7e99c6a59b65b095cd63a2773c6\\output\\res\\layout-v21\\notification_action.xml"
+    }
+]
