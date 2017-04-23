@@ -45,16 +45,11 @@ public class GhostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ghost);
         AssetManager assetManager = getAssets();
         try {
-            dictionary = new SimpleDictionary(assetManager.open("words.txt"));
+            dictionary = new FastDictionary(assetManager.open("words.txt"));
         } catch (IOException e) {
             Toast toast = Toast.makeText(this, "Could not load dictionary", Toast.LENGTH_LONG);
             toast.show();
         }
-        /**
-         **
-         **  YOUR CODE GOES HERE
-         **
-         **/
         onStart(null);
     }
 
@@ -76,7 +71,6 @@ public class GhostActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -88,6 +82,7 @@ public class GhostActivity extends AppCompatActivity {
      */
     public boolean onStart(View view) {
         userTurn = random.nextBoolean();
+        userTurn = false;
         TextView text = (TextView) findViewById(R.id.ghostText);
         text.setText("");
         TextView label = (TextView) findViewById(R.id.gameStatus);
@@ -102,17 +97,16 @@ public class GhostActivity extends AppCompatActivity {
 
     private void computerTurn() {
         TextView label = (TextView) findViewById(R.id.gameStatus);
-        // Do computer turn stuff then make it the user's turn again
         TextView frag = (TextView) findViewById(R.id.ghostText);
-        if(frag.getText().length() >= 4)
+        if(frag.getText().length() >= 4 && dictionary.isWord((String)frag.getText())) {
             label.setText("Computer Victory");
+            return;
+        }
         String str_frag = (String) frag.getText();
         String new_word = this.dictionary.getAnyWordStartingWith(str_frag);
         if(new_word == null) {
             //word does not exist, challenge the user
-            userTurn = true;
-            label.setText(USER_TURN);
-            challengeUser();
+            label.setText("You Lost");
         } else {
             //The word exsists
             new_word = new_word.substring(str_frag.length());
@@ -125,7 +119,8 @@ public class GhostActivity extends AppCompatActivity {
     }
 
     private void challengeUser() {
-        System.out.println("Challenged!");
+        TextView status = (TextView) findViewById(R.id.gameStatus);
+        status.setText("Player has entered an invalid word, Computer Wins!");
     }
 
     /**

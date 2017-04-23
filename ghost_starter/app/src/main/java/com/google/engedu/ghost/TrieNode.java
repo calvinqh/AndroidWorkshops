@@ -16,6 +16,7 @@
 package com.google.engedu.ghost;
 
 import java.util.HashMap;
+import java.util.Set;
 
 
 public class TrieNode {
@@ -28,14 +29,62 @@ public class TrieNode {
     }
 
     public void add(String s) {
+        //full word is added
+        if (s.length() == 0) {
+            this.isWord = true;
+            return;
+        }
+
+        TrieNode letter = children.get(s.substring(0, 1));
+
+        //if a node for the letter does not exist
+        if (letter == null) {
+            children.put(s.substring(0, 1), new TrieNode());
+        }
+        letter = children.get(s.substring(0, 1));
+        letter.add(s.substring(1));
     }
 
     public boolean isWord(String s) {
-      return false;
+        if (s.length() == 0)
+            return this.isWord;
+
+        TrieNode letter = children.get(s.substring(0, 1));
+        if (letter != null)
+            return letter.isWord(s.substring(1));
+        return false;
+    }
+
+    public TrieNode tranverseToPrefix(String s) {
+        TrieNode next = null;
+        if (s.length() == 0)
+            return next;
+        String letter = s.substring(0, 1);
+        next = children.get(letter);
+        return next.tranverseToPrefix(s.substring(1));
     }
 
     public String getAnyWordStartingWith(String s) {
-        return null;
+        if (s.length() != 0) {
+            String letter = s.substring(0, 1);
+            TrieNode nextLet = children.get(letter);
+            if (nextLet == null) //The frag is invalid
+                return null;
+            String suffix = nextLet.getAnyWordStartingWith(s.substring(1));
+            if (suffix == null) //There is no suffix that exist for this prefix
+                return null;
+            return letter + suffix;
+        } else {
+            Set<String> keys = children.keySet();
+            for (String key : keys) {
+                if (children.get(key).isWord) {
+                    return key;
+                } else {
+                    return getAnyWordStartingWith(key);
+                }
+            }
+            return "";
+        }
     }
 
     public String getGoodWordStartingWith(String s) {
