@@ -12,21 +12,23 @@
         android:id="@+id/bluff_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Call Bluff"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="challenge"
+        android:text="Call Bluff"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RESET"
+        android:layout_marginBottom="8dp"
         android:layout_marginRight="7dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="reset"
+        android:text="RESET"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/user_cards"
@@ -38,11 +40,11 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="42dp"
-        app:layout_constraintTop_toBottomOf="@+id/pile_size"
+        app:layout_constraintTop_toBottomOf="@+id/status"
         app:layout_constraintHorizontal_bias="0.511" />
 
     <TextView
-        android:id="@+id/pile_size"
+        android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
